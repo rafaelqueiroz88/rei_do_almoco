@@ -70,7 +70,7 @@ namespace App\Controllers {
             // Recuperando o horário
             $horario        = date( 'H:i:s', time() );
             $limite_minimo  = date( '10:00:0', time() );
-            $limite_maximo  = date( '12:01:0', time() );
+            $limite_maximo  = date( '12:00:0', time() );
 
             // Teste lógico para saber se o sistema está ou não sendo executado durante o horário permitido
             // Comente este bloco de código se for necessário testar a aplicação
@@ -82,7 +82,7 @@ namespace App\Controllers {
 
             // A linha abaixo está sendo mantida para testes, pois o sistema só aceita acessos dentro do seu horário padrão
             // Descomente se for necessário fazer testes ou manutenção no sistema
-            //include "./Public/Views/Home/index.php";
+            // include "./Public/Views/Home/index.php";
 
         }
     }
