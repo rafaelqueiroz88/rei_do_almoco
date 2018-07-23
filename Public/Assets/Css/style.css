@@ -1,0 +1,32 @@
+body {
+    background-color: #333;
+}
+
+main {
+    padding-top: 15px;
+}
+
+.cadastro-rei-almoco {
+    background-color: white;
+    border-radius: 10px;
+    border-bottom: 2px solid blue;
+    width: auto;
+    height: auto;
+    padding: 15px;
+    box-shadow: 5px 5px 5px rgba(30, 30, 30, .8);
+}
+
+.painel-candidatos {
+    overflow: auto;
+    background-color: white;
+    border-radius: 10px;
+    border-bottom: 2px solid blue;
+    max-height: 325px;
+    padding: 15px;
+    box-shadow: 5px 5px 5px rgba(30, 30, 30, .8);
+}
+
+.foto-rei {
+    width: 60px;
+    height: 60px;
+}

@@ -1,0 +1,32 @@
+CREATE SCHEMA `rei_almoco` ;
+
+CREATE TABLE `rei_almoco`.`candidatos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` TEXT NOT NULL,
+  `email` TEXT NOT NULL,
+  `foto` TEXT NOT NULL,
+  `voto` INT NOT NULL,
+  `data_entrada` DATE NOT NULL,
+  `hora_entrada` TIME NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `rei_almoco`.`votos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `candidato` INT NOT NULL,
+  `eleitor` INT NOT NULL,
+  `data_entrada` DATE NOT NULL,
+  `hora_entrada` TIME NOT NULL,
+  PRIMARY KEY (`id`));
+
+CREATE TABLE `rei_almoco`.`configuration` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `voto_proprio` INT NULL,
+  `voto_multiplo` INT NULL,
+  `permitir_anonimo` INT NULL,
+  PRIMARY KEY (`id`));
+
+INSERT INTO `rei_almoco`.`configuration` (`voto_proprio`, `voto_multiplo`, `permitir_anonimo`) VALUES ('0', '0', '0');
+
+
+
+
