@@ -54,6 +54,8 @@ CREATE TABLE `rei_almoco`.`configuration` (
 
 INSERT INTO `rei_almoco`.`configuration` (`voto_proprio`, `voto_multiplo`, `permitir_anonimo`) VALUES ('0', '0', '0');
 
+Ou acesse a pasta Database dentro da aplicação, importe os dados para dentro de seu banco de dados.
+
 <hr />
 
 <b>Configurando a conexão do MySql</b>
