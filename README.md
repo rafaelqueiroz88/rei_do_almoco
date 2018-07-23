@@ -67,6 +67,33 @@ private static $db_name     = "rei_almoco";
 private static $username    = "root";
 private static $password    = "";
 
+<b>Configurando o servidor de e-mail para disparar emails de notificação</b>
+
+Acesse App/Models/Home.php
+
+Altere as linhas: 82, 83, 84, 85, 86, 87, 88 e 89
+
+$mail->SMTPDebug    = 0;
+$mail->isSMTP();
+$mail->Host         = 'smtp.gmail.com';
+$mail->SMTPAuth     = true;
+$mail->Username     = 'reidoalmoco@gmail.com'; // Altere o e-mail se necessário
+$mail->Password     = 'reidoalmoco123'; // Inclua a senha do e-mail informado
+$mail->SMTPSecure   = 'tls';
+$mail->Port         = 587;
+
+Também é necessário preencher algumas variáveis do PHPMailer para atualizar o conteúdo a ser enviado.
+O conteúdo pode ser atualizado nas linhas: 92, 93, 94, 95, 96, 97, 98 e 99.
+
+$mail->setFrom( 'reidoalmoco@gmail.com', 'Rei do Almoço' );
+$mail->addAddress( self::$email );
+
+// Conteúdo a ser enviado
+$mail->isHTML( true );
+$mail->Subject = utf8_encode( 'Bem vindo ao Rei do Almoço' );
+$mail->Body    = utf8_encode( 'Olá ' . self::$nome. '! Você se cadastrou em Rei do Almoço.' );
+$mail->AltBody = utf8_encode( 'Olá' . self::$nome. '! Você se cadastrou em Rei do Almoço.' );
+
 <b>Habilitando o modo de teste da aplicação</b>
 
 Acesse App/Controllers/Home.php
@@ -94,7 +121,12 @@ Altere as linhas 72 e 73 conforme as suas necessidades.
 $limite_minimo  = date( '10:00:0', time() );
 $limite_maximo  = date( '12:00:0', time() );
 
-<b>Outras configurações e ferramentas do sistema</b>
+<b>Outras configurações e informações do sistema</b>
+
+Para fazer uso do disparador de e-mail foi necessário criar uma conta de e-mail.
+Foi criado um endereço de e-mail em https://gmail.com
+E-mail: reidoalmoco@gmail.com
+Senha: reidoalmoco123
 
 O sistema utiliza o Bootstrap 4 e Jquery 3.2.1.
 Para o envio de e-mails utiliza-se a biblioteca do PHPMailer
@@ -104,4 +136,4 @@ Informações em: https://github.com/PHPMailer/PHPMailer (Acesso em: 22/07/2018)
 Para fazer uso deste recurso foi necessário também utilizar o Composer
 Informações em: https://getcomposer.org/ (Acesso em: 22/07/2018)
 
-Outras informações: rafael.qdc88@gmail.com
+Outras informações: rafael.qdc88@gmail.com ou rafael.castro6@fatec.sp.gov.br
